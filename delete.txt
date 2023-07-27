@@ -1,0 +1,71 @@
+app.delete('/api/deletepatient', (req,res)=> {
+	var ret_val = {};
+		try
+		{
+			var id = req.query.id;
+			var sql = `delete from patient where id='${id}'`;
+  
+			con.query(sql, function (err, result) {
+				if (err) throw err;
+				console.log("Number of records deleted: " + result.affectedRows);
+				ret_val.code="1";
+			ret_val.message="Success. Patient Deleted";
+			return res.status(200).send(ret_val);
+			});
+	
+		}
+		catch ( error )
+		{
+				console.log(error);
+				ret_val.code="0";
+				ret_val.message="ERROR. No records Deleted";
+				return res.status(500).send(ret_val);
+		}
+
+}
+
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.get('/api/readpatient', (req,res)=> {
+	
+
+	var ret_val = {};
+	try
+	{
+
+		var sql = `SELECT * from patient`;
+
+		con.query(sql, function (err, result, fields) {
+	
+			if (err) throw err;
+			return res.status(200).send(  result);
+			
+		});
+		
+	
+	}
+	catch ( error )
+	{
+			console.log(error);
+			ret_val.code="0";
+			ret_val.message="ERROR. Patient data not fetched";
+			return res.status(500).send(ret_val);
+	}	
+
+});
