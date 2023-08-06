@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+
+    <table width="90%" border="1">
+        <tr>
+            <td>
+                
+            </td>
+
+            <td>
+                Vnumber
+            </td>
+            <td>
+                type
+            </td>
+            <td>
+                owner
+            </td>
+            <td>
+                address
+            </td>
+            <td>
+                lat
+            </td>
+            <td>
+                lng
+            </td>
+            <td>
+                owner_phone
+            </td>
+            <td>
+                hourly_rate
+            </td>
+        </tr>
+
+        <tr v-for="(result, index) in results">
+            <td>
+                {{ result.idno }}
+            </td>
+
+            <td>
+                {{ result.Vnumber }}
+            </td>
+            <td>
+                {{ result.type }}
+            </td>
+            <td>
+                {{ result.owner }}
+            </td>
+            <td>
+               {{ result.address }}
+            </td>
+            <td>
+                {{ result.lat }}
+            </td>
+            <td>
+               {{ result.lng }}
+            </td>
+            <td>
+                {{ result.owner_phone }}
+            </td>
+            <td>
+                {{ result.hourly_rate }}
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="displayambulancevue.js"></script>
+
+
+</body>
+</html>

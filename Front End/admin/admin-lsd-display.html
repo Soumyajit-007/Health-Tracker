@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+
+    <table width="90%" border="1">
+        <tr>
+            <td>
+                idno
+            </td>
+
+            <td>
+                common_name
+            </td>
+            <td>
+                sc_name
+            </td>
+            <td>
+                description
+            </td>
+           
+        </tr>
+
+        <tr v-for="(result, index) in results">
+            <td>
+                {{ result.idno }}
+            </td>
+
+            <td>
+                {{ result.common_name}}
+            </td>
+            <td>
+                {{ result.sc_name}}
+            </td>
+            <td>
+                {{ result.description}}
+            </td>
+            
+        </tr>
+    </table>
+
+</div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="displayambulancevue.js"></script>
+
+
+</body>
+</html>
